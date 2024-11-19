@@ -7,5 +7,5 @@ use Core\Domain\Entities\User;
 interface UserRepositoryInterface
 {
     /** @return User[] */
-    public function listar(): array;
+    public function findAll(): array;
 }

@@ -11,12 +11,12 @@ readonly class UserRepository implements UserRepositoryInterface
     public function __construct(private UserModel $model)
     {}
 
-    public function listar(): array
+    public function findAll(): array
     {
-        $projetos = $this->model->all();
+        $users = $this->model->all();
 
-        return $projetos->map(function ($projeto) {
-            return UserMapper::fromEloquent($projeto);
+        return $users->map(function ($user) {
+            return UserMapper::fromEloquent($user);
         })->toArray();
     }
 }

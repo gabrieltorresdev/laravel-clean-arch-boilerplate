@@ -12,12 +12,12 @@ readonly class ListUserUseCase
     {}
 
     /**
-     * @return OutputListProjetoDto[]
+     * @return OutputListUserDto[]
      * @throws Exception
      */
     public function execute(): array
     {
-        $resultado = $this->userRepository->listar();
+        $resultado = $this->userRepository->findAll();
 
         return OutputListUserDto::arrayOf($resultado);
     }
